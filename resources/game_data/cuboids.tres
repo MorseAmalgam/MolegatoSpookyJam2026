@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="GameData" format=3 uid="uid://bx5m0ud2niy75"]
+
+[ext_resource type="Script" uid="uid://d3n4clnfoqcw4" path="res://resources/code_type.gd" id="1_7a4eb"]
+[ext_resource type="Script" uid="uid://b183ygm7r2xju" path="res://resources/game_data.gd" id="2_wf2wm"]
+
+[sub_resource type="Resource" id="Resource_auxx3"]
+script = ExtResource("1_7a4eb")
+name = "Normal"
+color = Color(1, 1, 1, 1)
+amount = 256
+metadata/_custom_type_script = "uid://d3n4clnfoqcw4"
+
+[resource]
+script = ExtResource("2_wf2wm")
+name = "Cuboids"
+code = Dictionary[String, ExtResource("1_7a4eb")]({
+"Normal": SubResource("Resource_auxx3")
+})
+metadata/_custom_type_script = "uid://b183ygm7r2xju"

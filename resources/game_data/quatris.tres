@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GameData" format=3 uid="uid://bcmxmb5wl8wwg"]
+
+[ext_resource type="Script" uid="uid://b183ygm7r2xju" path="res://resources/game_data.gd" id="1_1hbrp"]
+[ext_resource type="Script" uid="uid://d3n4clnfoqcw4" path="res://resources/code_type.gd" id="1_nysnb"]
+[ext_resource type="Resource" uid="uid://50j3ommo045y" path="res://resources/code_type/NormalCode.tres" id="2_i1lpy"]
+
+[resource]
+script = ExtResource("1_1hbrp")
+name = "Quatris"
+code = Dictionary[String, ExtResource("1_nysnb")]({
+"Normal": ExtResource("2_i1lpy")
+})
+metadata/_custom_type_script = "uid://b183ygm7r2xju"

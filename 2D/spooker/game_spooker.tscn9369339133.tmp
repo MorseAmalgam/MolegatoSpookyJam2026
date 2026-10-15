@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://tv738fr2rsul"]
+
+[ext_resource type="Script" uid="uid://dmlj61drv2mpx" path="res://2D/spooker/game_spooker.gd" id="1_q2png"]
+[ext_resource type="Theme" uid="uid://cwwrbybsdqxa7" path="res://2D/spooker/retro.tres" id="2_1ei53"]
+
+[node name="Screen" type="Node2D" unique_id=925487940 node_paths=PackedStringArray("progress_bar", "status_text", "code_integrity_bar")]
+script = ExtResource("1_q2png")
+progress_bar = NodePath("HUD/ProgressBar")
+status_text = NodePath("HUD/StatusLabel")
+code_integrity_bar = NodePath("HUD/CodeStatus")
+
+[node name="Background" type="ColorRect" parent="." unique_id=945004933]
+offset_right = 1154.0
+offset_bottom = 648.0
+color = Color(0.011087579, 0.011087578, 0.01108758, 1)
+
+[node name="HUD" type="Control" parent="." unique_id=1750186760]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="CodeStatus" type="ColorRect" parent="HUD" unique_id=170061627]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 51.0
+offset_top = 30.0
+offset_right = -53.0
+offset_bottom = 78.0
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD" unique_id=318367211]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = -76.0
+offset_right = -52.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_1ei53")
+value = 23.0
+rounded = true
+show_percentage = false
+
+[node name="StatusLabel" type="Label" parent="HUD" unique_id=901389538]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 600.0
+offset_right = 1100.0
+offset_bottom = 624.0
+theme = ExtResource("2_1ei53")
+text = "AWAITING GAME CARTRIDGE"
+horizontal_alignment = 1

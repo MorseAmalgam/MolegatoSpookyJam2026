@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CodeType" format=3 uid="uid://b0q8wk24f8fue"]
+
+[ext_resource type="Script" uid="uid://d3n4clnfoqcw4" path="res://resources/code_type.gd" id="1_csi23"]
+[ext_resource type="Texture2D" uid="uid://0q0cmctq1vjq" path="res://assets/textures/code_icons/code_weird_assets.png" id="1_o6idj"]
+
+[resource]
+script = ExtResource("1_csi23")
+name = "Weird Assets"
+icon = ExtResource("1_o6idj")
+color = Color(0.43584996, 0.69, 0.103499986, 1)
+metadata/_custom_type_script = "uid://d3n4clnfoqcw4"

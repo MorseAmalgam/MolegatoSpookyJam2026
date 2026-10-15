@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CodeType" format=3 uid="uid://ddu848ou2ldcn"]
+
+[ext_resource type="Script" uid="uid://d3n4clnfoqcw4" path="res://resources/code_type.gd" id="1_kkp6k"]
+[ext_resource type="Texture2D" uid="uid://blnys7j4qh6bg" path="res://assets/textures/code_icons/code_self_aware.png" id="1_vvfb1"]
+
+[resource]
+script = ExtResource("1_kkp6k")
+name = "Self-Aware"
+icon = ExtResource("1_vvfb1")
+color = Color(0.51866674, 0.24000001, 1, 1)
+metadata/_custom_type_script = "uid://d3n4clnfoqcw4"

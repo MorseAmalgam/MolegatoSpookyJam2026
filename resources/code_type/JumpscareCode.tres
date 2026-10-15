@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CodeType" format=3 uid="uid://tn0t15y3v1op"]
+
+[ext_resource type="Texture2D" uid="uid://dlrkxv4g2pocn" path="res://assets/textures/code_icons/code_jumpscare.png" id="1_bnjjo"]
+[ext_resource type="Script" uid="uid://d3n4clnfoqcw4" path="res://resources/code_type.gd" id="1_qepo8"]
+
+[resource]
+script = ExtResource("1_qepo8")
+name = "Jumpscare"
+icon = ExtResource("1_bnjjo")
+color = Color(1, 0.67058825, 0, 1)
+metadata/_custom_type_script = "uid://d3n4clnfoqcw4"

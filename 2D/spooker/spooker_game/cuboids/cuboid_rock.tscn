@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://das0sq7o86hb2"]
+
+[ext_resource type="Script" uid="uid://c0wwbhdyo4q5p" path="res://2D/spooker/spooker_game/cuboids/cuboid_rock.gd" id="1_knsb2"]
+[ext_resource type="Texture2D" uid="uid://yqi2o5463q2q" path="res://assets/textures/code_icons/code_normal.png" id="2_eocsw"]
+
+[node name="Rock" type="Node2D" unique_id=2026803780]
+script = ExtResource("1_knsb2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=580529388]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=305638772]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1398052225]
+color = Color(0.14, 0.14, 0.14, 1)
+polygon = PackedVector2Array(32, -32, 32, 32, -32, 32, -32, -32)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=610237591]
+texture_filter = 1
+texture = ExtResource("2_eocsw")

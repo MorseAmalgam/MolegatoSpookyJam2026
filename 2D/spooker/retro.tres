@@ -1,0 +1,23 @@
+[gd_resource type="Theme" format=3 uid="uid://cwwrbybsdqxa7"]
+
+[ext_resource type="FontFile" uid="uid://cm1kod543fi2j" path="res://assets/fonts/ChevyRay - Chocolate Mono.ttf" id="1_jpwb8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vuq4o"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcwud"]
+bg_color = Color(0, 0.7254902, 0.16078432, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_bottom = 4
+
+[resource]
+default_font = ExtResource("1_jpwb8")
+Label/colors/font_color = Color(0, 0.7254902, 0.16078432, 1)
+ProgressBar/styles/background = SubResource("StyleBoxFlat_vuq4o")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_pcwud")

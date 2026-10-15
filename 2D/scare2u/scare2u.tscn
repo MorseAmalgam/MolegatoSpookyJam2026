@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://drq256havhl67"]
+
+[ext_resource type="Script" uid="uid://c38xur2fholjn" path="res://2D/scare2u/scare2u.gd" id="1_tqw3v"]
+[ext_resource type="Texture2D" uid="uid://s3y1xs2ty7l6" path="res://assets/textures/smartphone_indicators.png" id="2_yr1fv"]
+
+[node name="Scare2u" type="Control" unique_id=1438076450]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1090.0
+offset_bottom = 1920.0
+script = ExtResource("1_tqw3v")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=833299795]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11119685, 0.11119684, 0.11119684, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1232519741]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "SCARE2U"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1463193207]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 8.0
+offset_right = 1077.0398
+offset_bottom = 75.0
+texture = ExtResource("2_yr1fv")
+expand_mode = 2
+
+[node name="OrderContainer" type="VBoxContainer" parent="." unique_id=192346012]
+layout_mode = 0
+offset_top = 106.0
+offset_right = 1086.0
+offset_bottom = 1915.0
