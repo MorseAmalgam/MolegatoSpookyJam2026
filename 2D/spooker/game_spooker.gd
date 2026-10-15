@@ -19,6 +19,7 @@ var loader_state:LoaderState = LoaderState.Idle
 var minigame:SpookerGame
 var transfer_rate:float = 8.5
 
+signal copy_completed
 
 func _process(delta: float) -> void:
 	if loader_state != LoaderState.Transferring:
@@ -34,13 +35,14 @@ func _process(delta: float) -> void:
 		status_text.text = "DATA TRANSFERRED"
 		progress_bar.visible = false
 		$GameHolder.remove_child(minigame)
-		# TODO Copy game to recipient Cartridge
+		copy_completed.emit(game_being_copied)
 
 
 func add_code(new_code:CodeType)->void:
 	game_being_copied.add_code(new_code)
 	update_code_integrity_bar()
 	progress_bar.max_value = game_being_copied.get_total_data()
+
 
 
 func plug_in_game(game:GameData)->void:
@@ -67,7 +69,7 @@ func start_copy()->void:
 	game_being_copied = game_in_loader.duplicate(true)
 	loader_state = LoaderState.Transferring
 	progress_bar.visible = true
-	# TODO: Load minigame
+	# Load game to screen
 	$GameHolder.add_child(minigame)
 	minigame.initialize_game()
 	if !minigame.item_collected.is_connected(add_code):
