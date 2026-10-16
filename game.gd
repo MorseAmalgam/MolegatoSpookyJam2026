@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_down"):
+	if event.is_action_pressed("ui_end"):
 		$SpookerScreenViewport/Screen.plug_in_game(game)
-	elif event.is_action_pressed("ui_accept"):
+	elif event.is_action_pressed("ui_home"):
 		$SpookerScreenViewport/Screen.start_copy()

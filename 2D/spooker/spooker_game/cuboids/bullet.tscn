@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bsd0ud7sk6ofc"]
+
+[ext_resource type="Script" uid="uid://bknpelnsf31i2" path="res://2D/spooker/spooker_game/cuboids/bullet.gd" id="1_5jwdy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2dwb"]
+size = Vector2(10, 32)
+
+[node name="Bullet" type="Node2D" unique_id=812304480]
+script = ExtResource("1_5jwdy")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1232308886]
+points = PackedVector2Array(0, 16, 0, -16)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1288909607]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1136199889]
+shape = SubResource("RectangleShape2D_t2dwb")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]

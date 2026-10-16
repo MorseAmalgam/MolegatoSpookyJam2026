@@ -1,37 +1,16 @@
 [gd_scene format=3 uid="uid://bfh6ol7isb5to"]
 
 [ext_resource type="Script" uid="uid://co84ci0rp6nqy" path="res://2D/spooker/spooker_game/cuboids.gd" id="1_ntk4j"]
-[ext_resource type="Texture2D" uid="uid://busffexa0d5tk" path="res://icon.svg" id="2_83mqs"]
-[ext_resource type="Texture2D" uid="uid://dlrkxv4g2pocn" path="res://assets/textures/code_icons/code_jumpscare.png" id="3_fpwkc"]
+[ext_resource type="PackedScene" uid="uid://bestk26htfhif" path="res://2D/spooker/spooker_game/cuboids/ship.tscn" id="3_fpwkc"]
 [ext_resource type="PackedScene" uid="uid://das0sq7o86hb2" path="res://2D/spooker/spooker_game/cuboids/cuboid_rock.tscn" id="4_farer"]
+[ext_resource type="AudioStream" uid="uid://3xya0fb82csy" path="res://assets/sounds/explosion.wav" id="4_yhbp3"]
 
 [node name="Cuboids" type="Node2D" unique_id=1187080732]
 script = ExtResource("1_ntk4j")
+cuboid = ExtResource("4_farer")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1051656796]
-position = Vector2(227, 149)
-texture = ExtResource("2_83mqs")
+[node name="Ship" parent="." unique_id=658461261 instance=ExtResource("3_fpwkc")]
 
-[node name="Icon2" type="Sprite2D" parent="." unique_id=854754113]
-position = Vector2(678, 138)
-texture = ExtResource("2_83mqs")
-
-[node name="Icon3" type="Sprite2D" parent="." unique_id=1903968607]
-position = Vector2(414, 487)
-texture = ExtResource("2_83mqs")
-
-[node name="CodeJumpscare" type="Sprite2D" parent="." unique_id=271894920]
-position = Vector2(594, 287)
-texture = ExtResource("3_fpwkc")
-
-[node name="Rock" parent="." unique_id=2026803780 instance=ExtResource("4_farer")]
-position = Vector2(702, 336)
-
-[node name="Rock2" parent="." unique_id=43455365 instance=ExtResource("4_farer")]
-position = Vector2(184, 392)
-
-[node name="Rock3" parent="." unique_id=1180182244 instance=ExtResource("4_farer")]
-position = Vector2(417, 232)
-
-[node name="Rock4" parent="." unique_id=940431784 instance=ExtResource("4_farer")]
-position = Vector2(888, 538)
+[node name="CuboidDestroyed" type="AudioStreamPlayer" parent="." unique_id=236902817]
+stream = ExtResource("4_yhbp3")
+max_polyphony = 8

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bestk26htfhif"]
+
+[ext_resource type="Script" uid="uid://626bfak1otem" path="res://2D/spooker/spooker_game/cuboids/ship.gd" id="1_xri5y"]
+[ext_resource type="PackedScene" uid="uid://bsd0ud7sk6ofc" path="res://2D/spooker/spooker_game/cuboids/bullet.tscn" id="2_ptrsn"]
+[ext_resource type="AudioStream" uid="uid://bkuulj1vhioy2" path="res://assets/sounds/laser_fire.wav" id="3_3nwvt"]
+
+[node name="Ship" type="Node2D" unique_id=658461261]
+script = ExtResource("1_xri5y")
+bullet = ExtResource("2_ptrsn")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1747055611]
+points = PackedVector2Array(-10, 20, -15, 0, 0, -20, 15, 0, 10, 20, 0, 12)
+closed = true
+width = 6.0
+
+[node name="LaserSound" type="AudioStreamPlayer" parent="." unique_id=2046717793]
+stream = ExtResource("3_3nwvt")
