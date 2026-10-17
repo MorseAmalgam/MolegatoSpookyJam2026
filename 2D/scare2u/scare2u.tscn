@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://drq256havhl67"]
 
 [ext_resource type="Script" uid="uid://c38xur2fholjn" path="res://2D/scare2u/scare2u.gd" id="1_tqw3v"]
-[ext_resource type="PackedScene" uid="uid://c80bi67k5kpn6" path="res://control/game_order.tscn" id="3_gkt3t"]
 [ext_resource type="Texture2D" uid="uid://ccd1kgkjcaiu5" path="res://assets/textures/Flipphone-screen.png" id="3_pqbia"]
 [ext_resource type="Texture2D" uid="uid://cfxkekfe4pybl" path="res://assets/textures/flip-phone-reception.png" id="3_t2uto"]
 [ext_resource type="FontFile" uid="uid://cm1kod543fi2j" path="res://assets/fonts/ChevyRay - Chocolate Mono.ttf" id="3_tuanl"]
 [ext_resource type="Texture2D" uid="uid://8g12hrigdwgn" path="res://assets/textures/flip-phone-battery.png" id="4_tuanl"]
+[ext_resource type="AudioStream" uid="uid://croxg70uy3grg" path="res://assets/sounds/cell_phone_alert.wav" id="7_xd7nn"]
 
 [node name="Scare2u" type="Control" unique_id=1438076450]
 layout_mode = 3
@@ -38,12 +38,6 @@ offset_right = 204.0
 offset_bottom = 240.0
 theme_override_constants/separation = 0
 alignment = 2
-
-[node name="GameOrder" parent="ColorRect/OrderContainer" unique_id=1631945376 instance=ExtResource("3_gkt3t")]
-layout_mode = 2
-
-[node name="GameOrder2" parent="ColorRect/OrderContainer" unique_id=1900028669 instance=ExtResource("3_gkt3t")]
-layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=1232519741]
 texture_filter = 1
@@ -86,3 +80,7 @@ offset_top = 21.0
 offset_right = 204.0
 offset_bottom = 24.0
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=756390149]
+stream = ExtResource("7_xd7nn")
+volume_db = -16.421

@@ -5,6 +5,7 @@ class Order:
 	var game:GameData
 	var pay:int
 
+
 var code_types:Array[String] = [
 			"JumpscareCode",
 			"SelfAwareCode",
@@ -24,6 +25,7 @@ func _ready() -> void:
 	for file:String in dir.get_files():
 		game_list.append(file)
 	
+	await get_tree().create_timer(1.0).timeout
 	create_new_order()
 
 
