@@ -46,14 +46,17 @@ func add_code(new_code:CodeType)->void:
 
 
 func plug_in_game(game:GameData)->void:
-	if (!ResourceLoader.exists("res://2D/spooker/spooker_game/%s.tscn" % game.name.to_lower())):
-		status_text.text = "ERROR LOADING GAME ROM"
-		return
+	#if (!ResourceLoader.exists("res://2D/spooker/spooker_game/%s.tscn" % game.name.to_lower())):
+	#	status_text.text = "ERROR LOADING GAME ROM"
+	#	return
 	
 	game_in_loader = game
 	data_current = 0
 	progress_bar.max_value = game_in_loader.get_total_data()
-	minigame = load("res://2D/spooker/spooker_game/%s.tscn" % game.name.to_lower()).instantiate()
+	if (ResourceLoader.exists("res://2D/spooker/spooker_game/%s.tscn" % game.name.to_lower())):
+		minigame = load("res://2D/spooker/spooker_game/%s.tscn" % game.name.to_lower()).instantiate()
+	else:
+		minigame = load("res://2D/spooker/spooker_game/cuboids.tscn").instantiate()
 	loader_state = LoaderState.Waiting
 	status_text.text = "LOADED: %s" % game_in_loader.name
 
