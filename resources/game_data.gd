@@ -16,6 +16,7 @@ func add_code(new_code:CodeType)->void:
 		printt("Current amount: %skb" % code[new_code.name].amount)
 		code[new_code.name].amount = code[new_code.name].amount + new_code.amount
 	else:
+		printt("Code type doesn't current exist, adding new type to dictionary")
 		code[new_code.name] = new_code
 	
 	printt("%dkb of %s" % [code[new_code.name].amount, code[new_code.name].name])

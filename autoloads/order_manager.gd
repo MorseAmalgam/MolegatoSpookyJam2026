@@ -6,10 +6,10 @@ class Order:
 	var pay:int
 
 
-var code_types:Array[String] = [
-			"JumpscareCode",
-			"SelfAwareCode",
-			"WeirdAssetCode",
+@onready var code_types:Array[CodeType] = [
+			load("res://resources/code_type/JumpscareCode.tres"),
+			load("res://resources/code_type/SelfAwareCode.tres"),
+			load("res://resources/code_type/WeirdAssetCode.tres")
 		]
 
 var game_list:Array
@@ -34,7 +34,7 @@ func create_new_order()->void:
 	var new_order = Order.new()
 	
 	# Create game data for the the order
-	var order_game_data = game_list.pick_random().duplicate()
+	var order_game_data = game_list.pick_random().duplicate(true)
 	
 	# Create the desired corruptions for the order
 	code_types.shuffle()
@@ -42,10 +42,10 @@ func create_new_order()->void:
 	var var_data_amount = order_game_data.code["Normal"].amount
 	var amounts:Array[float] = [0.15, 0.20, 0.25, 0.30]
 	amounts.shuffle()
-	var corruption1 = load("res://resources/code_type/%s.tres" % code_types[0]) as CodeType
+	var corruption1 = code_types[0].duplicate(true)
 	corruption1.amount = amounts[0] * var_data_amount
 	order_game_data.add_code(corruption1)
-	var corruption2 = load("res://resources/code_type/%s.tres" % code_types[1]) as CodeType
+	var corruption2 = code_types[1].duplicate(true)
 	corruption2.amount = amounts[1] * var_data_amount
 	order_game_data.add_code(corruption2)
 	
