@@ -15,3 +15,5 @@ func _input(event: InputEvent) -> void:
 		$SpookerScreenViewport/Screen.plug_in_game(game)
 	elif event.is_action_pressed("ui_home"):
 		$SpookerScreenViewport/Screen.start_copy()
+	elif event.is_action_pressed("ui_accept"):
+		OrderManager.create_new_order()

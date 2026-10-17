@@ -23,7 +23,7 @@ func _ready() -> void:
 	var dir := DirAccess.open("res://resources/game_data")
 	dir.list_dir_begin()
 	for file:String in dir.get_files():
-		game_list.append(file)
+		game_list.append(load("res://resources/game_data/%s" % file))
 	
 	await get_tree().create_timer(1.0).timeout
 	create_new_order()
@@ -34,13 +34,13 @@ func create_new_order()->void:
 	var new_order = Order.new()
 	
 	# Create game data for the the order
-	var order_game_data = load("res://resources/game_data/%s" % game_list.pick_random())
+	var order_game_data = game_list.pick_random().duplicate()
 	
 	# Create the desired corruptions for the order
 	code_types.shuffle()
 	
 	var var_data_amount = order_game_data.code["Normal"].amount
-	var amounts:Array[float] = [0.05, 0.10, 0.15]
+	var amounts:Array[float] = [0.15, 0.20, 0.25, 0.30]
 	amounts.shuffle()
 	var corruption1 = load("res://resources/code_type/%s.tres" % code_types[0]) as CodeType
 	corruption1.amount = amounts[0] * var_data_amount
