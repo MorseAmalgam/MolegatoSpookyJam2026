@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://tv738fr2rsul" path="res://2D/spooker/game_spooker.tscn" id="1_oornv"]
 [ext_resource type="Resource" uid="uid://bx5m0ud2niy75" path="res://resources/game_data/cuboids.tres" id="2_glg8j"]
 [ext_resource type="PackedScene" uid="uid://drq256havhl67" path="res://2D/scare2u/scare2u.tscn" id="2_pma5d"]
+[ext_resource type="ArrayMesh" uid="uid://bpmxanw2m35yc" path="res://assets/models/FlipPhone.obj" id="5_w2bf4"]
+[ext_resource type="Texture2D" uid="uid://blv4eln5h2ahc" path="res://assets/textures/Flipphone.png" id="6_vcvi5"]
+[ext_resource type="Texture2D" uid="uid://ccd1kgkjcaiu5" path="res://assets/textures/Flipphone-screen.png" id="7_h47s1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glg8j"]
 resource_local_to_scene = true
@@ -13,24 +16,27 @@ shading_mode = 0
 material = SubResource("StandardMaterial3D_glg8j")
 size = Vector2(11.54, 6.48)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pma5d"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d75um"]
 shading_mode = 0
+albedo_texture = ExtResource("6_vcvi5")
+texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_t2dwb"]
-material = SubResource("StandardMaterial3D_pma5d")
-size = Vector2(1.09, 1.92)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5e6"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("7_h47s1")
 
 [node name="Game" type="Node3D" unique_id=755753238]
 script = ExtResource("1_d7acc")
 game = ExtResource("2_glg8j")
 
 [node name="PhoneScreenViewport" type="SubViewport" parent="." unique_id=1517656630]
-size = Vector2i(1090, 1920)
+size = Vector2i(204, 240)
 
 [node name="Scare2u" parent="PhoneScreenViewport" unique_id=1438076450 instance=ExtResource("2_pma5d")]
 
 [node name="SpookerScreenViewport" type="SubViewport" parent="." unique_id=199599796]
-size = Vector2i(1154, 648)
+size = Vector2i(1154, 636)
 
 [node name="Screen" parent="SpookerScreenViewport" unique_id=925487940 instance=ExtResource("1_oornv")]
 
@@ -38,9 +44,11 @@ size = Vector2i(1154, 648)
 transform = Transform3D(1, 0, 0, 0, 0.0789291, -0.99688023, 0, 0.99688023, 0.0789291, 0, 11.544926, -4.001339)
 mesh = SubResource("PlaneMesh_pma5d")
 
-[node name="PhoneScreen" type="MeshInstance3D" parent="." unique_id=340435829]
-transform = Transform3D(0.9375354, -0.34779364, -0.008181461, 0, 0.023517393, -0.99972355, 0.3478898, 0.93727624, 0.022048388, 7.962513, 9.201272, -4.540173)
-mesh = SubResource("PlaneMesh_t2dwb")
+[node name="FlipPhone" type="MeshInstance3D" parent="." unique_id=1054389757]
+transform = Transform3D(29.999998, 0, 0, 0, 29.518833, 5.3515015, 0, -5.3515034, 29.518827, -0.13447666, 9.746437, -0.12850308)
+mesh = ExtResource("5_w2bf4")
+surface_material_override/0 = SubResource("StandardMaterial3D_d75um")
+surface_material_override/1 = SubResource("StandardMaterial3D_gl5e6")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=51743851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.696293, 2.7183352)

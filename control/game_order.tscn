@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://c80bi67k5kpn6"]
+
+[ext_resource type="FontFile" uid="uid://cm1kod543fi2j" path="res://assets/fonts/ChevyRay - Chocolate Mono.ttf" id="1_wmi1c"]
+[ext_resource type="Texture2D" uid="uid://dlrkxv4g2pocn" path="res://assets/textures/code_icons/code_jumpscare.png" id="2_kb60o"]
+[ext_resource type="Texture2D" uid="uid://blnys7j4qh6bg" path="res://assets/textures/code_icons/code_self_aware.png" id="3_0u75h"]
+[ext_resource type="Texture2D" uid="uid://0q0cmctq1vjq" path="res://assets/textures/code_icons/code_weird_assets.png" id="4_g5h7k"]
+
+[node name="GameOrder" type="Control" unique_id=1631945376]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -948.0
+offset_bottom = -620.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=588161877]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=1245413381]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 204.0
+offset_bottom = 28.0
+color = Color(0, 0, 0, 1)
+
+[node name="GameNameLabel" type="Label" parent="." unique_id=225211994]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 100.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_wmi1c")
+theme_override_font_sizes/font_size = 12
+text = "Game Name"
+
+[node name="PayLabel" type="Label" parent="." unique_id=1332860229]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 201.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_wmi1c")
+theme_override_font_sizes/font_size = 12
+text = "$40"
+horizontal_alignment = 2
+
+[node name="JumpscareIcon" type="TextureRect" parent="." unique_id=529588081]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 15.0
+offset_right = 12.0
+offset_bottom = 26.0
+texture = ExtResource("2_kb60o")
+expand_mode = 1
+
+[node name="PercentLabel" type="Label" parent="JumpscareIcon" unique_id=1746242302]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 11.0
+offset_right = 40.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("1_wmi1c")
+theme_override_font_sizes/font_size = 12
+text = "25%"
+
+[node name="SelfAwareIcon" type="TextureRect" parent="." unique_id=1242128284]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 50.0
+offset_top = 15.0
+offset_right = 61.0
+offset_bottom = 26.0
+texture = ExtResource("3_0u75h")
+expand_mode = 1
+
+[node name="PercentLabel" type="Label" parent="SelfAwareIcon" unique_id=1297904462]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 11.0
+offset_right = 40.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("1_wmi1c")
+theme_override_font_sizes/font_size = 12
+text = "25%"
+
+[node name="WeirdAssetsIcon" type="TextureRect" parent="." unique_id=176504641]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 97.0
+offset_top = 15.0
+offset_right = 108.0
+offset_bottom = 26.0
+texture = ExtResource("4_g5h7k")
+expand_mode = 1
+
+[node name="PercentLabel" type="Label" parent="WeirdAssetsIcon" unique_id=1057090164]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 11.0
+offset_right = 40.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("1_wmi1c")
+theme_override_font_sizes/font_size = 12
+text = "25%"
