@@ -8,4 +8,5 @@ script = ExtResource("1_kkp6k")
 name = "Self-Aware"
 icon = ExtResource("1_vvfb1")
 color = Color(0.51866674, 0.24000001, 1, 1)
+amount = 0
 metadata/_custom_type_script = "uid://d3n4clnfoqcw4"

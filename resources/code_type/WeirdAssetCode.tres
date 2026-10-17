@@ -8,4 +8,5 @@ script = ExtResource("1_csi23")
 name = "Weird Assets"
 icon = ExtResource("1_o6idj")
 color = Color(0.43584996, 0.69, 0.103499986, 1)
+amount = 0
 metadata/_custom_type_script = "uid://d3n4clnfoqcw4"

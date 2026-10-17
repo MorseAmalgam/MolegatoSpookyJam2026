@@ -8,4 +8,5 @@ script = ExtResource("1_qepo8")
 name = "Jumpscare"
 icon = ExtResource("1_bnjjo")
 color = Color(1, 0.67058825, 0, 1)
+amount = 0
 metadata/_custom_type_script = "uid://d3n4clnfoqcw4"
