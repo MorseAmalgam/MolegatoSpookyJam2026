@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c0wwbhdyo4q5p" path="res://2D/spooker/spooker_game/cuboids/cuboid_rock.gd" id="1_knsb2"]
 [ext_resource type="Texture2D" uid="uid://yqi2o5463q2q" path="res://assets/textures/code_icons/code_normal.png" id="2_eocsw"]
-[ext_resource type="AudioStream" uid="uid://3xya0fb82csy" path="res://assets/sounds/explosion.wav" id="3_eocsw"]
 
 [node name="Rock" type="Node2D" unique_id=2026803780]
 script = ExtResource("1_knsb2")
@@ -19,8 +18,5 @@ width = 6.0
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=610237591]
 texture_filter = 1
 texture = ExtResource("2_eocsw")
-
-[node name="ExplodeSound" type="AudioStreamPlayer" parent="." unique_id=2128500979]
-stream = ExtResource("3_eocsw")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]

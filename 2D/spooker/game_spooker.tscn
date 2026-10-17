@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://dmlj61drv2mpx" path="res://2D/spooker/game_spooker.gd" id="1_q2png"]
 [ext_resource type="Theme" uid="uid://cwwrbybsdqxa7" path="res://2D/spooker/retro.tres" id="2_1ei53"]
 
-[node name="Screen" type="Node2D" unique_id=925487940 node_paths=PackedStringArray("progress_bar", "status_text", "code_integrity_bar")]
+[node name="Screen" type="Node2D" unique_id=925487940 node_paths=PackedStringArray("code_integrity_bar", "progress_bar", "status_text")]
 script = ExtResource("1_q2png")
+code_integrity_bar = NodePath("HUD/CodeStatus")
 progress_bar = NodePath("HUD/ProgressBar")
 status_text = NodePath("HUD/StatusLabel")
-code_integrity_bar = NodePath("HUD/CodeStatus")
 
 [node name="Background" type="ColorRect" parent="." unique_id=945004933]
 offset_right = 1154.0
-offset_bottom = 648.0
+offset_bottom = 636.0
 color = Color(0.011087579, 0.011087578, 0.01108758, 1)
 
 [node name="GameHolder" type="Node2D" parent="." unique_id=1852402870]
@@ -57,5 +57,6 @@ offset_top = 600.0
 offset_right = 1100.0
 offset_bottom = 624.0
 theme = ExtResource("2_1ei53")
+theme_override_font_sizes/font_size = 24
 text = "AWAITING GAME CARTRIDGE"
 horizontal_alignment = 1

@@ -13,4 +13,5 @@ cuboid = ExtResource("4_farer")
 
 [node name="CuboidDestroyed" type="AudioStreamPlayer" parent="." unique_id=236902817]
 stream = ExtResource("4_yhbp3")
+volume_db = -10.0
 max_polyphony = 8

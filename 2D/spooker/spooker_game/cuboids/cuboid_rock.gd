@@ -55,8 +55,8 @@ func _process(delta: float) -> void:
 	elif (position.x > 1222):
 		position.x = -60
 	if (position.y < -70):
-		position.y = 708
-	elif (position.y > 718):
+		position.y = 696
+	elif (position.y > 706):
 		position.y = -60
 
 

@@ -15,3 +15,4 @@ width = 6.0
 
 [node name="LaserSound" type="AudioStreamPlayer" parent="." unique_id=2046717793]
 stream = ExtResource("3_3nwvt")
+volume_db = -10.0

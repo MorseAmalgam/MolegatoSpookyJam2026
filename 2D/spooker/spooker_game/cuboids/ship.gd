@@ -15,16 +15,19 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	# Forward movement
 	if Input.is_action_pressed("ui_up"):
 		velocity = max(velocity + 1, max_velocity)
 		pass
-	elif Input.is_action_pressed("ui_left"):
+	# Rotation
+	if Input.is_action_pressed("ui_left"):
 		rotate(-rotation_speed)
 		pass
 	elif Input.is_action_pressed("ui_right"):
 		rotate(rotation_speed)
 		pass
-	elif Input.is_action_just_pressed("ui_down"):
+	# Ashootin'
+	if Input.is_action_just_pressed("ui_down"):
 		$LaserSound.play()
 		var new_bullet = bullet.instantiate()
 		get_parent().add_child(new_bullet)
@@ -34,4 +37,12 @@ func _process(delta: float) -> void:
 	
 	
 	position += Vector2.UP.rotated(rotation) * velocity * delta
+	if (position.x < -30):
+		position.x = 1174
+	elif (position.x > 1284):
+		position.x = -20
+	if (position.y < -30):
+		position.y = 656
+	elif (position.y > 666):
+		position.y = -20
 	velocity -= delta
