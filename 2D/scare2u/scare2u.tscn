@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://drq256havhl67"]
 
 [ext_resource type="Script" uid="uid://c38xur2fholjn" path="res://2D/scare2u/scare2u.gd" id="1_tqw3v"]
-[ext_resource type="Texture2D" uid="uid://s3y1xs2ty7l6" path="res://assets/textures/smartphone_indicators.png" id="2_yr1fv"]
+[ext_resource type="PackedScene" uid="uid://c80bi67k5kpn6" path="res://control/game_order.tscn" id="3_gkt3t"]
+[ext_resource type="Texture2D" uid="uid://ccd1kgkjcaiu5" path="res://assets/textures/Flipphone-screen.png" id="3_pqbia"]
+[ext_resource type="Texture2D" uid="uid://cfxkekfe4pybl" path="res://assets/textures/flip-phone-reception.png" id="3_t2uto"]
+[ext_resource type="FontFile" uid="uid://cm1kod543fi2j" path="res://assets/fonts/ChevyRay - Chocolate Mono.ttf" id="3_tuanl"]
+[ext_resource type="Texture2D" uid="uid://8g12hrigdwgn" path="res://assets/textures/flip-phone-battery.png" id="4_tuanl"]
 
 [node name="Scare2u" type="Control" unique_id=1438076450]
 layout_mode = 3
@@ -10,36 +14,75 @@ offset_right = 1090.0
 offset_bottom = 1920.0
 script = ExtResource("1_tqw3v")
 
+[node name="FlipphoneScreen" type="Sprite2D" parent="." unique_id=1625398444]
+texture_filter = 1
+scale = Vector2(0.6640625, 0.6640625)
+texture = ExtResource("3_pqbia")
+centered = false
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=833299795]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -886.0
+offset_bottom = -1680.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.11119685, 0.11119684, 0.11119684, 1)
+color = Color(0.4627451, 0.8627451, 0.46666667, 1)
+
+[node name="OrderContainer" type="VBoxContainer" parent="ColorRect" unique_id=192346012]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 204.0
+offset_bottom = 240.0
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="GameOrder" parent="ColorRect/OrderContainer" unique_id=1631945376 instance=ExtResource("3_gkt3t")]
+layout_mode = 2
+
+[node name="GameOrder2" parent="ColorRect/OrderContainer" unique_id=1900028669 instance=ExtResource("3_gkt3t")]
+layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=1232519741]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_top = 4.0
+offset_bottom = 21.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 64
-text = "SCARE2U"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tuanl")
+theme_override_font_sizes/font_size = 16
+text = "FEARIZON"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1463193207]
+[node name="Reception" type="TextureRect" parent="ColorRect" unique_id=1463193207]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
 layout_mode = 0
-offset_left = 833.0
-offset_top = 8.0
-offset_right = 1077.0398
-offset_bottom = 75.0
-texture = ExtResource("2_yr1fv")
-expand_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("3_t2uto")
 
-[node name="OrderContainer" type="VBoxContainer" parent="." unique_id=192346012]
+[node name="Battery" type="TextureRect" parent="ColorRect" unique_id=1760335775]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
 layout_mode = 0
-offset_top = 106.0
-offset_right = 1086.0
-offset_bottom = 1915.0
+offset_left = 182.0
+offset_top = 4.0
+offset_right = 198.0
+offset_bottom = 20.0
+texture = ExtResource("4_tuanl")
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=1979149354]
+layout_mode = 0
+offset_top = 21.0
+offset_right = 204.0
+offset_bottom = 24.0
+color = Color(0, 0, 0, 1)
