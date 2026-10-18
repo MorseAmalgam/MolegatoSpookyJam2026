@@ -20,3 +20,12 @@ func add_code(new_code:CodeType)->void:
 		code[new_code.name] = new_code
 	
 	printt("%dkb of %s" % [code[new_code.name].amount, code[new_code.name].name])
+
+func replace_code(new_code:CodeType)->bool:
+	if (code["Normal"].amount < new_code.amount):
+		printt("OUT OF EDITABLE CODE")
+		return false
+	
+	code["Normal"].amount -= new_code.amount
+	add_code(new_code)
+	return true

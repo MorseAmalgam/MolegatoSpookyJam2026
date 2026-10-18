@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 
 
 func add_code(new_code:CodeType)->void:
-	game_being_copied.add_code(new_code)
+	game_being_copied.replace_code(new_code)
 	update_code_integrity_bar()
 	progress_bar.max_value = game_being_copied.get_total_data()
 
@@ -85,12 +85,22 @@ func update_code_integrity_bar()->void:
 	for node in code_integrity_bar.get_children():
 		node.queue_free()
 	for codetype in game_being_copied.code:
+		# Code percentage breakdown
 		var code_percent = game_being_copied.code[codetype].amount / float(game_being_copied.get_total_data())
+		# Percentage Bar
 		var code_width = bar_width * code_percent
 		var color_rect = ColorRect.new()
 		color_rect.color = game_being_copied.code[codetype].color
 		code_integrity_bar.add_child(color_rect)
 		color_rect.position = Vector2(x_offset, 8)
 		color_rect.size = Vector2(code_width, 32)
+		# Percentage label
+		var code_percentage_label = $CodePercentageTemplate.duplicate()
+		code_percentage_label.modulate = game_being_copied.code[codetype].color
+		code_percentage_label.text = "%d%%" % (code_percent * 100.0)
+		code_percentage_label.visible = true
+		code_percentage_label.position.x = x_offset - 20 + (code_width / 2)
+		code_percentage_label.position.y = 57
+		code_integrity_bar.add_child(code_percentage_label)
 		x_offset += code_width
 	pass

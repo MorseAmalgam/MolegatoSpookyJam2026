@@ -20,7 +20,7 @@ func _ready() -> void:
 	$Line2D.default_color = type.color
 	
 	# Assign value
-	type.amount = randi_range(2,5)
+	type.amount = 5
 	
 	# Assign visual and collision polygons
 	var polygon:Array = []

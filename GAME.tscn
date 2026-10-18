@@ -46,6 +46,7 @@ mesh = SubResource("PlaneMesh_pma5d")
 
 [node name="FlipPhone" type="MeshInstance3D" parent="." unique_id=1054389757]
 transform = Transform3D(29.999998, 0, 0, 0, 29.518833, 5.3515015, 0, -5.3515034, 29.518827, -0.13447666, 9.746437, -0.12850308)
+visible = false
 mesh = ExtResource("5_w2bf4")
 surface_material_override/0 = SubResource("StandardMaterial3D_d75um")
 surface_material_override/1 = SubResource("StandardMaterial3D_gl5e6")

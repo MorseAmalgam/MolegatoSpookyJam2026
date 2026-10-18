@@ -58,3 +58,10 @@ func create_new_order()->void:
 	order_queue.append(new_order)
 	new_order_received.emit(new_order)
 	pass
+
+func ship_order(sent_data:GameData)->int:
+	var pay = order_queue[0].pay
+	
+	# TODO: Calculate corruption accuracy
+	
+	return pay
